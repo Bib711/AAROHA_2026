@@ -17,7 +17,6 @@ export default function Navbar() {
     { label: 'About', href: '/#about' },
     { label: 'Rules', href: '/#rules' },
     { label: 'Criteria', href: '/#criteria' },
-    { label: 'Judge', href: '/#judges' },
   ];
 
   const handleLogout = async () => {
@@ -49,8 +48,8 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 className={`px-3 py-2 rounded-md text-sm font-medium transition-colors hover:text-white hover:bg-white/5 ${location.pathname === link.href
-                    ? 'text-white'
-                    : 'text-gray-400'
+                  ? 'text-white'
+                  : 'text-gray-400'
                   }`}
               >
                 {link.label}
