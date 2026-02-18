@@ -19,6 +19,7 @@ const createRegistration = async (req, res) => {
       num_microphones,
       drum_setup,
       additional_requirements,
+      instagram_handle,
       transaction_id
     } = req.body;
 
@@ -55,6 +56,7 @@ const createRegistration = async (req, res) => {
           num_microphones,
           drum_setup,
           additional_requirements,
+          instagram_handle: instagram_handle || null,
           transaction_id: transaction_id || null,
           registration_fee: REGISTRATION_FEE,
           payment_status: 'pending',

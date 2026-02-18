@@ -55,6 +55,7 @@ export default function RegistrationPage() {
     num_microphones: 2,
     drum_setup: '',
     additional_requirements: '',
+    instagram_handle: '',
     transaction_id: '',
   });
 
@@ -79,6 +80,7 @@ export default function RegistrationPage() {
               num_microphones: reg.num_microphones || 2,
               drum_setup: reg.drum_setup || '',
               additional_requirements: reg.additional_requirements || '',
+              instagram_handle: reg.instagram_handle || '',
               transaction_id: reg.transaction_id || '',
             });
             setRegistrationData(reg);
@@ -569,6 +571,21 @@ export default function RegistrationPage() {
                     />
                     <p className="text-xs text-gray-500 text-right">
                       {form.additional_requirements.length}/1000
+                    </p>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label className="text-gray-300">Band Instagram Handle (optional)</Label>
+                    <Input
+                      name="instagram_handle"
+                      value={form.instagram_handle}
+                      onChange={handleChange}
+                      placeholder="@yourbandname"
+                      maxLength={50}
+                      className="bg-white/5 border-white/10 text-white placeholder:text-gray-500 focus-visible:ring-violet-500"
+                    />
+                    <p className="text-xs text-gray-500">
+                      Share your band&apos;s Instagram for promotion
                     </p>
                   </div>
                 </div>
