@@ -168,7 +168,7 @@ export default function AdminPage() {
             <StatCard
               icon={<Clock className="w-5 h-5" />}
               label="Pending"
-              value={stats.pending}
+              value={registrations.filter(r => r.registration_status === 'pending' && r.payment_status !== 'failed').length}
               color="amber"
             />
             <StatCard
@@ -250,7 +250,7 @@ export default function AdminPage() {
                         {reg.registration_status !== 'rejected' && reg.payment_status !== 'failed' && getStatusBadge(reg.registration_status)}
                         {reg.payment_status === 'failed' || reg.registration_status === 'rejected'
                           ? <Badge variant="destructive"><AlertCircle className="w-3 h-3 mr-1" /> Rejected</Badge>
-                          : getPaymentBadge(reg.payment_status)
+                          : reg.payment_status !== 'pending' && getPaymentBadge(reg.payment_status)
                         }
                       </div>
                       <p className="text-sm text-gray-400">{reg.college_name}</p>
