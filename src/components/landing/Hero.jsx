@@ -27,7 +27,7 @@ export default function Hero() {
         <img
           src={sjcLogo}
           alt=""
-          className="w-[110%] h-[110%] max-w-none object-contain opacity-[0.15]"
+          className="w-[125%] h-[110%] max-w-none object-contain opacity-[0.15]"
           style={{ filter: 'blur(1.5px) brightness(1.4) grayscale(0.2)' }}
         />
       </div>
