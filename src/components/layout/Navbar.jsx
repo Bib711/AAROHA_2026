@@ -119,7 +119,25 @@ export default function Navbar() {
                 <a
                   key={link.href}
                   href={link.href}
-                  onClick={() => setMobileOpen(false)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setMobileOpen(false);
+                    const hash = link.href.includes('#') ? link.href.split('#')[1] : null;
+                    if (location.pathname !== '/') {
+                      navigate('/');
+                      if (hash) {
+                        setTimeout(() => {
+                          document.getElementById(hash)?.scrollIntoView({ behavior: 'smooth' });
+                        }, 300);
+                      }
+                    } else if (hash) {
+                      setTimeout(() => {
+                        document.getElementById(hash)?.scrollIntoView({ behavior: 'smooth' });
+                      }, 100);
+                    } else {
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                  }}
                   className="block px-3 py-2 rounded-md text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 transition-colors"
                 >
                   {link.label}

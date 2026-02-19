@@ -22,12 +22,12 @@ export default function Hero() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-pink-600/10 rounded-full blur-[100px] animate-glow-pulse" style={{ animationDelay: '3s' }} />
       </div>
 
-      {/* SJC logo watermark — fills hero behind content */}
-      <div className="absolute inset-0 flex items-center justify-center overflow-hidden pointer-events-none">
+      {/* SJC logo watermark — fixed behind all content */}
+      <div className="fixed inset-0 flex items-center justify-center overflow-hidden pointer-events-none z-0">
         <img
           src={sjcLogo}
           alt=""
-          className="w-[110%] h-[110%] max-w-none object-contain opacity-[0.07]"
+          className="w-[110%] h-[110%] max-w-none object-contain opacity-[0.15]"
           style={{ filter: 'blur(1.5px) brightness(1.4) grayscale(0.2)' }}
         />
       </div>
