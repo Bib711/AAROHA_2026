@@ -35,6 +35,7 @@ const rules = [
       'Original compositions and covers',
       'Acoustic and electric instruments',
       'Use of provided microphones and stage equipment',
+      'Use of VST and software sound processing',
     ],
     type: 'allowed',
   },
@@ -43,7 +44,6 @@ const rules = [
     title: 'Not Allowed',
     items: [
       'No backing tracks or pre-recorded music',
-      'No VST or software sound processing',
       'No obscene or offensive content',
     ],
     type: 'forbidden',
