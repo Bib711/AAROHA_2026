@@ -8,7 +8,7 @@ import {
   Plus,
   Trash2,
   Mic,
-  Drum,
+
   FileText,
   Send,
   CheckCircle,
@@ -53,7 +53,7 @@ export default function RegistrationPage() {
       { name: '', role: '' },
     ],
     num_microphones: 2,
-    drum_setup: '',
+
     additional_requirements: '',
     instagram_handle: '',
     transaction_id: '',
@@ -78,7 +78,7 @@ export default function RegistrationPage() {
                 ? reg.team_members
                 : [...(reg.team_members || []), ...Array(4).fill(EMPTY_MEMBER)].slice(0, Math.max(4, reg.team_members?.length || 4)),
               num_microphones: reg.num_microphones || 2,
-              drum_setup: reg.drum_setup || '',
+
               additional_requirements: reg.additional_requirements || '',
               instagram_handle: reg.instagram_handle || '',
               transaction_id: reg.transaction_id || '',
@@ -161,9 +161,7 @@ export default function RegistrationPage() {
     if (!form.team_leader_phone.trim() || !/^[0-9]{10}$/.test(form.team_leader_phone)) {
       return showError('Leader Phone must be a 10-digit number.');
     }
-    if (!form.drum_setup.trim()) {
-      return showError('Drum Setup is required (enter "none" if not needed).');
-    }
+
     if (!form.transaction_id.trim()) {
       return showError('Transaction / UTR ID is required. Please make the payment and enter the transaction ID.');
     }
@@ -537,18 +535,18 @@ export default function RegistrationPage() {
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label className="text-gray-300 flex items-center gap-1">
-                        <Drum className="w-3 h-3" />
-                        Drum Setup *
-                      </Label>
+                      <Label className="text-gray-300">Band Instagram Handle (optional)</Label>
                       <Input
-                        name="drum_setup"
-                        value={form.drum_setup}
+                        name="instagram_handle"
+                        value={form.instagram_handle}
                         onChange={handleChange}
-                        placeholder='e.g. Full kit with double bass pedal or "none"'
-                        required
+                        placeholder="@yourbandname"
+                        maxLength={50}
                         className="bg-white/5 border-white/10 text-white placeholder:text-gray-500 focus-visible:ring-violet-500"
                       />
+                      <p className="text-xs text-gray-500">
+                        Share your band&apos;s Instagram for promotion
+                      </p>
                     </div>
                   </div>
 
@@ -568,21 +566,6 @@ export default function RegistrationPage() {
                     />
                     <p className="text-xs text-gray-500 text-right">
                       {form.additional_requirements.length}/1000
-                    </p>
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label className="text-gray-300">Band Instagram Handle (optional)</Label>
-                    <Input
-                      name="instagram_handle"
-                      value={form.instagram_handle}
-                      onChange={handleChange}
-                      placeholder="@yourbandname"
-                      maxLength={50}
-                      className="bg-white/5 border-white/10 text-white placeholder:text-gray-500 focus-visible:ring-violet-500"
-                    />
-                    <p className="text-xs text-gray-500">
-                      Share your band&apos;s Instagram for promotion
                     </p>
                   </div>
                 </div>
