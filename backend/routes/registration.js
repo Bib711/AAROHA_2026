@@ -30,7 +30,6 @@ router.get('/event-info', (req, res) => {
       registration_fee: '₹1200 per team',
       requirements: [
         'Team must specify number of microphones',
-        'Team must specify drum setup requirements',
         'Any additional technical requirements must be mentioned'
       ]
     }

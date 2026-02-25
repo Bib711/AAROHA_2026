@@ -91,7 +91,6 @@ npm start
     { "name": "Charlie Davis", "role": "Keyboard" }
   ],
   "num_microphones": 4,
-  "drum_setup": "Full acoustic drum kit with double bass pedal",
   "additional_requirements": "Need 2 guitar amplifiers and 1 bass amplifier"
 }
 ```

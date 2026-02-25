@@ -14,7 +14,6 @@ CREATE TABLE IF NOT EXISTS registrations (
     team_leader_phone VARCHAR(15) NOT NULL,
     team_members JSONB NOT NULL DEFAULT '[]',
     num_microphones INTEGER NOT NULL DEFAULT 1,
-    drum_setup TEXT NOT NULL,
     additional_requirements TEXT,
     registration_fee INTEGER NOT NULL DEFAULT 1200,
     payment_status VARCHAR(20) NOT NULL DEFAULT 'pending',
@@ -160,7 +159,6 @@ async function initializeDatabase() {
   console.log('  - team_leader_phone (VARCHAR) - Contact phone');
   console.log('  - team_members (JSONB) - Array of team members');
   console.log('  - num_microphones (INTEGER) - Required microphones');
-  console.log('  - drum_setup (TEXT) - Drum setup requirements');
   console.log('  - additional_requirements (TEXT) - Other tech needs');
   console.log('  - registration_fee (INTEGER) - Fee amount (₹1200)');
   console.log('  - payment_status (VARCHAR) - pending/completed/failed/refunded');

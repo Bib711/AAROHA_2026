@@ -58,11 +58,6 @@ const validateRegistration = [
     .isInt({ min: 1, max: 20 })
     .withMessage('Number of microphones must be between 1 and 20'),
 
-  body('drum_setup')
-    .trim()
-    .notEmpty()
-    .withMessage('Drum setup requirement is required (specify "none" if not needed)'),
-
   body('additional_requirements')
     .optional()
     .trim()

@@ -41,7 +41,6 @@ CREATE TABLE IF NOT EXISTS registrations (
     team_leader_phone VARCHAR(15) NOT NULL,
     team_members JSONB NOT NULL DEFAULT '[]',
     num_microphones INTEGER NOT NULL DEFAULT 1,
-    drum_setup TEXT NOT NULL,
     additional_requirements TEXT,
     instagram_handle VARCHAR(50),
     registration_fee INTEGER NOT NULL DEFAULT 1200,

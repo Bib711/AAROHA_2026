@@ -17,7 +17,6 @@ const createRegistration = async (req, res) => {
       team_leader_phone,
       team_members,
       num_microphones,
-      drum_setup,
       additional_requirements,
       instagram_handle,
       transaction_id
@@ -59,7 +58,6 @@ const createRegistration = async (req, res) => {
           team_leader_phone,
           team_members,
           num_microphones,
-          drum_setup,
           additional_requirements,
           instagram_handle: instagram_handle || null,
           transaction_id: transaction_id || null,
